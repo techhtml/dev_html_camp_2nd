@@ -123,6 +123,69 @@ a {
   font-size: 28px;
 }
 
+/*
+ * Layout
+ * 1. 전통적인 Layout 구현법 (float)
+   * IE에서 flex를 지원하지 않기 때문에... float
+ * 2. 현대적인 Layout 구현법 (flex, grid)
+   * 대부분의 레이아웃은 flex로 커버 가능함
+   * 오늘 : flex
+ */
+
+header {
+  display: flex;
+  /*
+   * flex layout 구현을 위한 포석
+   * 부모요소에 display 속성을 이용하여 레이아웃 정의
+   */
+}
+h1 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+/* flex layout
+ * flexible(유연)하게 변하는 레이아웃
+ * 자식요소들이 알아서 좌-우 or 상-하로 정렬되도록 하는 레이아웃
+ * 요소들간의 크기(width)를 정의해줄 수 있다.
+   * flex: 1 / 각 요소들의 크기를 동일하게 지정해라
+   * 다른 요소들은 flex 속성을 갖고있지 않은데,
+     한 요소만 flex 속성을 갖는 경우
+     그 요소는 가용공간 전체를 다 차지함.
+  */
+
+.menu {
+  display: flex;
+  /*
+   * overflow
+   * 브라우저의 공간이나 박스가 사용가능한 공간을 넘친경우에,
+   * 넘친 공간을 어떻게 할 것인가?
+   * hidden : 감추겠다;
+   * scroll : 스크롤하겠다;
+   */
+  justify-content: center;
+  overflow: scroll;
+}
+/*
+ * menu라는 클래스를 가진 요소의 자식요소인 h2
+ * descendant combinator, 자손 콤비네이터
+ */
+.menu h2 {
+  display: none;
+}
+.menu a {
+  min-width: 120px;
+  padding: 54px 0 20px;
+}
+
+
+
+
+
+
+
+
+
 
 
 
