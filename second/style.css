@@ -1,0 +1,132 @@
+/*
+ * CSS
+ * 기초 문법
+ * 레이아웃
+ * 폰트, 컬러
+ */
+
+/*
+ * 1. 상속 (cascading, inherit)
+ * 부모요소에 들어있는 CSS가 자식 요소에 영향을 준다.
+ * cascading => 폭포가 흐르는 형태
+ * CSS => Cascading Style Sheet
+ */
+
+/*
+ * 2. 셀렉터 (Selector)
+ * HTML의 특정 요소에 CSS를 주기 위하여,
+ * HTML의 특정 요소를 CSS로 가져오는 것
+ * Tag Selector
+   * 태그이름을 기반으로 불러오는 셀렉터
+ */
+html { 
+/* root 요소 */
+
+}
+body {
+/*
+ * 우리 눈에 보이는 모든 HTML 요소는 body 안에
+ * 우리 눈에 보인다 = CSS를 넣는다
+ * body에서부터 CSS를 일반적으로는 시작
+ */
+}
+
+/*
+ * box-model
+ * 모든 HTML 박스(=요소)는 사각형(box)으로 이루어져 있다.
+ * 박스
+   * width (가로 길이, 너비)
+   * height (세로 길이, 높이)
+   * padding 
+     박스의 외곽선에서부터 내부 콘텐츠 사이의 여백
+     top, right, bottom, left / 시계방향
+     padding-top, padding-bottom / 각 방향에만
+   * border (외곽선)
+     * border-width (선의 굵기)
+     * border-style (선의 형태)
+     * border-color (선의 색상)
+     * border: 1px solid #eeeeee;
+     * border: <border-width> <border-style> <border-color>
+     * border-top: 1px solid #eeeeee;
+     * border-right: 1px solid #eeeeee;
+     * border-bottom: 1px solid #eeeeee;
+     * border-left: 1px solid #eee;
+   * margin
+     * 박스와 박스 사이의 여백
+     * margin에는 배경색을 넣을 수 X
+     * margin은 투명한 배경 (transparent)
+     * margin은 중첩이 됨.
+       * [ A        div ]
+       * [  26px margin ]
+       * [ B        div ]
+       * A { margin-bottom: 26px }
+       * B { margin-top: 26px }
+       * = 26px
+       * collapsping margin (margin 병합 현상)
+*/
+
+body {
+  margin: 0;
+  background: #eee;
+}
+header {
+}
+section {
+  text-align: center;
+}
+h2 {
+  font-size: 22px;
+  margin: 0;
+}
+p {
+  font-size: 28px;
+}
+a {
+  color: royalblue;
+}
+
+/*
+ * class 속성
+ * class selector
+ */
+.box {
+  margin-bottom: 10px;
+  padding: 28px 0 280px;
+  /*
+   * padding: <padding-top> <padding-right> <padding-bottom> <padding-left>;
+   * padding: 10px 20px 30px 40px;
+   * padding: 10px 20px 10px 20px;
+   * padding: 10px 20px;
+   * padding: 28px 0 280px 0;
+   * padding: 15px;
+   */
+}
+.theme-dark {
+  background: black;
+  color: white;
+}
+/*
+ * theme-dark라는 class를 가진 요소
+ * 요소 = 모든 요소
+ */
+.theme-light {
+  background: white;
+}
+/*
+ * theme-light라는 class를 가진 요소
+ * 요소 = 모든 요소
+ */
+.desc {
+  font-size: 14px;
+}
+.section-title {
+  font-size: 28px;
+}
+
+
+
+
+
+
+
+/**/
