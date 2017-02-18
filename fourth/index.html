@@ -1,0 +1,298 @@
+<!--
+  - HTML
+  - HTML - Hyper Text Markup Language
+  - HT (Hyper Text)
+    - 링크 (Anchor)
+    - 링크 A를 누르면 B로 이동 (하이퍼텍스트)
+    - HTML 1.0 (Anchor) (요소가 20개)
+  - ML (Markup Language)
+    - <div></div>
+    - div = 언어의 나열 = 문자의 나열 = 문자열
+    - div div div
+    - (<) div (>)
+    - <div>div</div>
+    - XML(데이터), MathML(수학기호), EmotionML(감정)
+  - HTML
+    - 링크로 이동이 가능한 마크업 언어
+    - HTML 1.0 (20개의 요소) => 1991년, 1993년 (표준)
+      - 문서(논문)를 나타내기위한 요소 20가지
+      - 요소 (Element)
+        - HTML을 구성하는 가장 작은 단위
+        - <div></div>
+          => HTML div Element (Document Object Model)
+          => div 요소
+      - a 요소, H1 - H6 요소, P요소, cite 요소(출처)
+    - HTML 4.01 - 1999년 (표준)
+      - XHTML 1.0 - 2003년
+      - XHTML 1.1 - 2004년
+      - XHTML 2.0 (2007년 망함)
+    - HTML 5 - 2014년 (표준)
+      - HTML 부문
+        - 시맨틱 HTML
+          - 문서의 의미에 맞게, 어플리케이션의 의미에 맞게 HTML을 작성할 수 있도록 하는 것
+          - section, article (div)
+          - 의미(시맨틱)
+            - HTML에는 마땅한 정답이 없기 때문에, 
+              HTML 각 요소의 의미에 맞게 HTML을 작성하는 것이 중요
+            - 예) 그녀가 나에게로 다가와 치킨을 주었을 때, 나는 한마리의 치킨이 되었다.
+            - 기계에게는 명확한 의미를 부여해줘야할 필요가 있음
+              - 스크린리더(화면낭독기)는 의미에 따라 요소를 다르게 읽고
+              - 검색 로봇(스파이더)은 의미에 따라 요소를 이해하여 콘텐츠를 보여주고
+              - 브라우저는 특정한 의미를 가진 요소에 스타일을 다르게 보여주는 등
+            - 구현 1) <div>그녀가 나에게로 다가와 치킨을 주었을 때, 나는 한마리의 치킨이 되었다.</div>
+            - 구현 2) <p>그녀가 나에게로 다가와 치킨을 주었을 때, 나는 한마리의 치킨이 되었다.</p>
+      - HTML과 관련 있는 API (JavaScript에 더 가까움)
+        - API (개발을 쉽게 할 수 있도록 브라우저나 제조사에서 제공하는 것)
+        - HTML의 미래다 (라고 많이 들었을 것들)
+          - Geolocation (위치정보 API)
+          - Local Storage (브라우저에 존재하는 스토리지)
+          - Session Storage (브라우저에 존재하는 스토리지)
+          - Service Worker (워커)
+          - canvas API (HTML상의 포토샵, 비트맵기반으로 이것저것 요상하게 할 수 있는)
+    - HTML 5.1 - 2016년 (표준)
+      - https://hyeonseok.com/soojung/webstandards/2017/01/28/808.html (DIFF)
+    - 문서 관점
+      - 시맨틱 HTML을 잘 준수
+    - 어플리케이션 관점 (최신, 비주류)
+      - HTML을 모듈로 쪼개는 법
+      - 마이크로데이터를 이용해 어플리케이션 데이터 표현법
+-->
+<!DOCTYPE html>
+<!--
+  - DOCTYPE html
+  - DOCTYPE = Document Type => 문서의 타입
+  - 1) 이 문서가 HTML인 지, XHTML인 지, XML인 지, SVG인 지 (즉, 어떤 언어인 지)
+  - 2) 이 문서가 HTML이라면 어떤 버전인 지 (즉, 어떤 버전인 지)
+  - DOCTYPE html => 최신버전의 html을 사용하겠다
+  - <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+  -> HTML 4.01
+  -> legacy doctype
+  -->
+<html>
+<!--
+  - HTML을 구성하는 가장 작은 단위 => 요소(Elements)
+  - HTML에서 요소
+    - DOM이 구성되어있는 객체
+    - 여는 태그 (<html>)
+      - (<)
+      - 요소명
+      - 속성명 = 속성값
+      - (>)
+    - 닫는 태그 (</html>)
+      - (<)
+      - (/)
+      - 요소명
+      - (>)
+-->
+
+<head>
+  <!--
+      - head : 두뇌
+      - 유저의 눈에는 보이지 않지만 로봇에게 제공하는 정보를 담고있는 요소
+      - 메타데이터(로봇에게만 제공하는 정보), 외부 리소스(스타일시트, 파비콘)
+    -->
+  <meta charset="UTF-8">
+  <!--
+      - charset = charactor set
+      - 미리 정의된 문자의 집합을 브라우저에게 정의해줌
+      - UTF-8을 기준으로 이 웹사이트를 (인코딩해서) 해석해줘
+      - UTF-8 : 유니코드 8비트
+      - 전세계 언어 대부분을 다 지원함
+      - UTF-16, UTF-32
+      - <meta http-equiv="r-Type" content="text/html; charset=UTF-8">
+      -> Legacy
+      -->
+  <meta name="viewport" content="initial-scale=1, width=device-width">
+  <!--
+      - viewport
+      - 여러분들의 웹사이트에 접근해서 유저가 바라보는 뷰
+      - 디스플레이
+        - 스마트폰 디스플레이
+        - 모니터
+        - TV
+      - (특히) 모바일 OS에서 여러분들의 웹사이트를 접근했을 때 바라보는 뷰
+        - initial-scale : 기본 배율
+        - minimum-scale : 최소 축소 가능 배율
+        - maximum-scale : 최대 확대 가능 배율
+        - width : 가로 사이즈 (device-width, px고정값)
+        - user-scalable : 유저가 축소나 확대를 할 수 있게 할 지 (true, false)
+      -->
+  <title>Hello ChoEun</title>
+  <link rel="icon" href="favicon.png">
+  <!-- 
+    FOUC 방지 코드 
+    @import보다 얘가 빠름
+  -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
+  <link rel="stylesheet" href="style.css">
+  <!--
+      - IE 구버전을 대응하지 않아도 되는 경우: png 파일
+      - IE 10이하를 대응해야 되는 경우: ico 파일
+      -->
+</head>
+
+<body>
+  <!--
+      - body : 몸체
+      - 유저의 눈에도 보이고 로봇에게도 제공하는 정보
+      -->
+  <!-- 헤더 영역 -->
+  <header>
+    <!-- 개인화영역 -->
+    <div>
+      <!-- 회원 등록, 후원, 구독 영역 -->
+      <div class="lst-menu clearfix">
+        <ul>
+          <!--
+              - ul
+              - unordered list (순서 없는 목록)
+              - ol
+              - ordered list (순서 있는 목록)
+              - ul 요소, ol 요소의 자식요소는 li 요소만 가질 수 있다.
+              -->
+          <li><a href="#">sign in</a></li>
+          <li><a href="#">become a supporter</a></li>
+          <li><a href="#">subscribe</a></li>
+          <li><a href="#">search</a></li>
+          <!--
+                - li
+                - list item (리스트 아이템, 목록 아이템)
+                - li 요소의 부모요소는 반드시 ol 이거나 ul이어야 합니다.
+                - li 요소의 자식요소로는 어떤 요소를 넣어도 상관 없다
+                -->
+        </ul>
+      </div>
+      <!-- 가디언지에 대한 정보 -->
+      <div class="lst-menu clearfix">
+        <ul>
+          <li><a href="#">jobs</a></li>
+          <li><a href="#">dating</a></li>
+          <li><a href="#">more</a></li>
+          <li><a href="#">international</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- 큰 로고 영역 -->
+    <div>
+      <h1>
+        <a href="#">theguardian</a>
+        <!-- 
+          - a, anchor
+          - 닻, HTML에서 특정한 위치로 이동하기 위한 링크
+          - 하이퍼텍스트
+          - href 속성, 필수값 (required)
+          - href 속성값으로 #은 우선은 의미없는 링크
+          -->
+      </h1>
+      <!--
+          - h1
+          - h1, heading level 1
+          - h1, h2, h3, h4, h5, h6
+          - h1은 이 페이지의 제목 1 (대제목)
+          - h1 같은 경우 표준에서 페이지 내에서 1번만 사용해주는 걸 권장 (recommend)
+          -->
+    </div>
+    <!-- 네비게이션 영역 -->
+    <nav>
+      <!--
+        - nav
+        - navigation
+        - 이 내부에 있는 콘텐츠가 이 페이지의 네비게이션을 위해 존재한다는 걸 나타내는 요소
+        -->
+      <ul>
+        <li><a href="#">home</a></li>
+        <li><a href="#">UK</a></li>
+        <li><a href="#">world selected</a></li>
+        <li><a href="#">sport</a></li>
+        <li><a href="#">football</a></li>
+        <li><a href="#">opinion</a></li>
+        <li><a href="#">culture</a></li>
+        <li><a href="#">business</a></li>
+        <li><a href="#">lifestyle</a></li>
+        <li><a href="#">fashion</a></li>
+        <li><a href="#">environment</a></li>
+        <li><a href="#">tech</a></li>
+        <li><a href="#">travel</a></li>
+      </ul>
+      <ol>
+        <li><a href="#">home</a></li>
+        <li><a href="#">world</a></li>
+        <li><a href="#">US</a></li>
+      </ol>
+      <ul>
+        <li><a href="#">americas</a></li>
+        <li><a href="#">asia</a></li>
+        <li><a href="#">australia</a></li>
+        <li><a href="#">africa</a></li>
+        <li><a href="#">middle east</a></li>
+        <li><a href="#">cities</a></li>
+        <li><a href="#">development</a></li>
+        <li><a href="#">europe</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- 콘텐츠영역 -->
+  <div>
+    <!-- 메인 아티클 영역 -->
+    <main>
+      <article>
+        <h2>Trump security adviser Flynn quits after leaks suggest he tried to cover up Russia talks</h2>
+        <p>The departure of Trump’s national security adviser is the most dramatic development yet to hit the president’s chaotic administration</p>
+        <figure>
+          <!--
+              - figure (figure)
+              - 꾸밈에 가까움
+            -->
+          <img src="3000.jpg" alt="">
+          <!--
+              - img (image)
+              - src 속성 (필수)
+                - 불러오는 이미지의 경로
+                - 확장자를 반드시 써주셔야합니다
+              - alt 속성 (필수, 특수한 케이스를 제외하곤 필수)
+                - alternative text (대체 텍스트)
+                - 나는 도저히 여기에 대체텍스트를 쓰지 못하겠어도, 빈값으로라도 넣어놔야함
+                - 시각장애인이 스크린리더로 페이지를 읽어들일 때 alt 속성에 있는 값을 읽어들입니다
+                - 모종의 사유로 이미지를 불러오지 못한 경우에 대체텍스트가 보이게 됩니다
+              -->
+          <figcaption>
+            <!--
+                 - figure caption
+                 - figure에서 설명하고자 하는 제목 or 텍스트
+                 -->
+            Michael Flynn claimed in his resignation letter that he had mistakenly misled the vice-president about the nature of the phone calls to Russia. Photograph: Win McNamee/Getty Images
+          </figcaption>
+        </figure>
+        <p>The US national security advisor, Michael Flynn, resigned late on Monday night amid a flow of intelligence leaks that he had secretly discussed sanctions with the Russian ambassador to Washington and then tried to cover up the conversations.</p>
+        <p>The resignation, with the Trump era less than four weeks old, is the latest and most dramatic convulsion in the most chaotic start to an administration in modern US history.</p>
+        <p>It was far from clear whether Flynn’s departure would steady an inexperienced and feuding White House, or resolve the lingering suspicions about the Trump team’s pre-election contacts with the Kremlin.</p>
+        <p>The White House issued a statement just after 11pm in Washington announcing the resignation, shortly after reports broke that the Trump administration had been warned weeks ago that Flynn might be vulnerable to Russian blackmail.</p>
+        <p>The statement also named retired army general Joseph Kellogg, who goes by his middle name Keith, as acting national security advisor, pending the appointment of a permanent successor. It was reported that a third general, former CIA director, David Petraeus, was due to meet Trump on Tuesday.</p>
+        <p>But Petraeus has legal issues of his own. He is currently nearing the end of two years probation for sharing classified information with his biographer and lover, Paula Broadwell.</p>
+        <img src="3000.jpg" alt="" class="align-left">
+        <p>In his resignation letter, Flynn claimed he had mistakenly misled <strong>vice-president</strong> Mike Pence and other Trump officials about the nature of phone calls in December to the Russian ambassador, Sergei Kisilyak.</p>
+        <p style="clear:both">When intelligence leaks about the communications began appearing last month, Pence and other White House officials insisted that the contact had only involved an exchange of Christmas greetings and arrangements for a future phone conversation between Trump and Vladimir Putin.</p>
+      </article>
+    </main>
+    <!-- 사이드 영역 -->
+    <aside></aside>
+    <!-- 관련 기사 -->
+    <div></div>
+    <!-- 다른 기사 -->
+    <div></div>
+    <!-- 많이 본 기사 -->
+    <div></div>
+  </div>
+  <!-- 푸터 영역 -->
+  <footer>
+    <!-- 작은 로고 영역 -->
+    <div></div>
+    <!-- 네비게이션 영역 -->
+    <div></div>
+    <!-- 사이트맵 -->
+    <div></div>
+  </footer>
+</body>
+
+</html>
+<!-- -->
