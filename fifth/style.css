@@ -1,4 +1,266 @@
-.header {}
+/*
+ * page common css
+ * 공통 CSS
+ * 이 페이지 전역에 영향을 미치는 CSS
+ */
+
+/*
+ * :root
+ * 해당 HTML 페이지의 루트 요소 (HTML 요소)에 CSS를 넣습니다
+ * html {}
+ */
+:root {
+  font-size: 18px;
+}
+
+body {
+  /*
+   * body에는 기본 margin 8px이 들어가있다
+   * 그거를 없애주자
+   */
+  margin: 0;
+}
+
+/*
+ * 광고
+ */
+.ed {
+  /*
+   * img 요소가 inline 요소
+   * text-align: center, img요소는 중앙정렬
+   */
+  text-align:center;
+  /*
+   * background
+   * <background-image>
+   * <background-position>
+     * default: 0 0
+     * 앞 0 Left
+     * 뒤 0 Top
+   * <background-repeat>
+     * 반복 여부
+     * default: repeat (반복하겠다)
+     * no-repeat (반복하지 않겠다)
+   * <background-color>
+     * 배경색
+   */
+  background:url('images/ⓟ_brunchbook_banner_default_bg_prize.png');
+}
+.ed img {
+  /*
+   * HTML img요소 alt 속성
+   * 영어는 기본적으로 하단에 약간의 여백을 만들어요
+   * abcdefghijklmn
+   */
+  vertical-align:top;
+}
+
+.header {
+  /*
+   * flexbox
+   * 만약... IE를 대응해야한다면.. float + clearfix
+   */
+
+  /*
+   * flexbox
+   * 2007년 (비교적 최신스펙)
+   * 스펙이 여러번 바뀌었어요.
+   * 그래서... 많은 브라우저를... 대응 하려면....
+   * 벤더 프리픽스를 사용해야합니다
+   * 브라우저 제조사에서 아직 표준이 아닌 스펙을 먼저 지원하기 위해 사용하는 접두사
+   * 실험실 기능 (베타 기능)
+   * 크롬, 사파리, 오페라 : -webkit-
+   * 마이크로소프트 : -ms-
+   * 파이어폭스 : -moz-
+   */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  /*
+   * justify-content
+   * 정렬 (좌우 정렬)
+   * flex-start : 좌측부터 정렬
+   * flex-end : 우측부터 정렬
+   * space-around : 공백을 전부 일정하게
+   * space-between : 좌우로 쫙 붙고, 공백은 일정하게
+   */
+  -webkit-box-pack:justify;
+  -ms-flex-pack:justify;
+  justify-content:space-between;
+  padding:15px;
+}
+
+.logo-area {
+  /*
+   * absolute될 요소의 기준점
+   * [구버전 꼼수]
+   * position:relative;
+   * padding-left:60px;
+   */
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  /*
+   * align-items
+   * 상하 정렬을 지정해요.
+   * flex-start : 상단정렬
+   * flex-end : 하단정렬
+   * center : 중앙정렬
+   * stretch : 늘어뜨리기 (같은 높이로, default)
+   * baseline : 폰트의 baseline을 기준으로 정렬
+   */
+  align-items:center;
+}
+.logo-area button {
+  /*
+   * [구버전 꼼수]
+   * position:absolute;
+   * left:0;
+   * top:34px;
+   */
+  /*
+   * flex layout에 한해서
+   * order
+   * 요소의 배치 순서
+   * (-1)-0-1-2-3-4-5-6-7-8-9-10
+   */
+   order:-1;
+   /*
+    * button 기본 CSS
+    * background
+    * padding
+    * border
+    * font
+    * 초기화 코드
+    */
+    background:none;
+    padding:0;
+    border:0;
+    font:inherit;
+}
+.logo-area h1 {
+  font-size:16px;
+}
+
+/*
+ * 공통 모듈 CSS를 짤 때 주의해야할 점
+ * 어떤 요소에 해당 CSS가 들어갈 지 모른다 (1) - 범용성
+ * 해당 CSS가 얼마나 확장될 지 모른다 (2) - 확장성
+ */
+.btn {
+  /*
+   * button 초기화 코드
+   */
+  background:none;
+  /* padding:0;
+  border:0; */
+  font:inherit;
+  /*
+   * a 초기화 코드
+   */
+  /*
+   * text-decoration
+   * 텍스트를 꾸며주는 CSS
+   * a 요소 기본값: underline => none
+   */
+  text-decoration:none;
+  /*
+   * cursor
+   * default: 기본 커서
+   * pointer: 앵커에서 사용하는 손가락모양의 커서
+   */
+  cursor: pointer;
+  /*
+   * 실제 button 코드
+   * font (font-size, line-height)
+   */
+  padding:6px 13px 4px;
+  /*
+   * currentColor
+   * 현재 요소의 color 속성값을 가져옴
+   * IE9까지 지원
+   */
+  border:1px solid currentColor;
+  color:#555;
+  /*
+   * border-radius
+   * 외곽선의 둥근정도
+   * IE9까지 지원
+   */
+  border-radius:25px;
+}
+.btn-primary {
+  color:#2ac1bc;
+}
+
+/*
+ * side-nav 날려버리기
+ * position
+ * HTML의 요소가 위치를 잡는 방법
+ * static 포지션 (Default) : 정적, 쌓인다. (normal flow)
+ * relative 포지션 : normal flow, 자기 자신을 기점으로 좌표 이동이 가능
+ * z-index, (left, top, right, bottom)
+ * absolute, fixed 포지션 : 절대 위치 지정 (Absolute Positioning)
+ * 쌓이는 구조 X, 특정한 위치에 자리를 잡음.
+ * 다른 요소가 있던 말던 상관 안함.
+ * 다른 요소와 z축으로 겹침
+ * 겹치는 구조에서는 HTML 상 뒤에 있는 요소가 앞에 있는 요소보다 z축이 높음
+ * z-index, (left, top, right, bottom)
+ * absolute와 fixed의 차이
+ * absolute는 부모 요소 중 position을 사용하는 요소가 있다면,
+   그 요소를 기준으로 좌표를 계산함 (relative, fixed)
+   (조상 요소 중 위치 지정 요소가 존재 한다면 그 요소를 기준으로 좌표를 계산)
+ * fixed는 브라우저를 기준으로 좌표를 계산
+   (동일한 coordinate system 중 가장 상위 root를 기준으로 좌표 계산)
+ */
+.side-nav {
+  position:fixed;
+  /*
+   * top과 bottom을 동시에 주면 어떻게 될까?
+   * vector처럼 top 좌표부터 bottom 좌표까지의 height를 전부 가짐
+   */
+  top:0;
+  bottom:0;
+  left:0;
+  /*
+   * left 값의 변경은 애니메이션 성능이 상당히 낮음
+   * 애니메이션을 만약 구현하면 transform으로 구현하는 걸 권장
+   */
+   transform:translate(-100%, 0);
+   border-right:1px solid #ebebeb;
+   background:#fff;
+}
+.side-nav-on {
+  transform:translate(0, 0);
+}
+.side-nav-header {
+  padding:215px 15px 55px;
+  background:url(images/img_sidebar_copy.png) center top no-repeat #efefef;
+  text-align:center;
+}
+.side-nav-contents {
+  border-top:1px solid #ededed;
+}
+.side-nav-contents .menus a {
+  display: block;
+  margin: 20px 0;
+  text-align: center;
+  text-decoration: none;
+}
+.lnk_facebook {
+  color:blue;
+}
+.lnk_twitter {
+  color:royalblue;
+}
+.lnk_kakao {
+  color:maroon;
+}
+.blind {
+  position:absolute;
+  left:-100%;
+}
 
 /*
  * CSS Selector
