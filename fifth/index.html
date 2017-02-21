@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--
+    - IE에 브라우저 모드
+    - 최신버전
+   -->
+  <link rel="stylesheet" href="./style.css">
+  <title>5번째 시간 - Fast Campus HTML &amp; CSS 캠프</title>
+  <!--
+    - brunch (https://brunch.co.kr/) MAIN
+   -->
+</head>
+<body>
+  <!-- ad 클래스명은 광고임을 지칭 -->
+  <!-- adblock이 ad라는 클래스명을 가진 광고를 막아버림 -->
+  <!-- 보조도구 : html-linter-tidy -->
+  <a href="#">
+    <div class="ed">
+      <!-- 펼쳐졌을 때 -->
+      <!--img src="" alt=""-->
+      <!-- 펼쳐지지 않았을 때 -->
+      <img src="images/ⓟ_brunchbook_banner_default_text_prize.png" alt="">
+    </div>
+  </a>
+
+  <!--
+    - header
+    - 되도록이면 클래스명으로 CSS를 넣는 것이 좋다.
+   -->
+  <header class='header'>
+    <div class='logo-area'>
+      <h1><a href='#'>brunch</a></h1>
+      <button type='button'>menu</button>
+      <!--
+        - 자바스크립트를 이용하는 링크처럼 생긴 요소를 어떻게 구현하면 좋을까요?
+        - 페이지 이동 X
+        - <button type='button'>스크립트 버튼</button>
+        - [구버전] [IE7 이하, 안드로이드 2.x]
+        - button에 css가 안들어가는 현상...
+       -->
+    </div>
+    <div class='tool-area'>
+      <a href='#' class='btn btn-normal'>글쓰기</a>
+      <button type='button'>검색</button>
+    </div>
+    <nav class='side-nav'>
+      <!--
+        - 언젠가 hidden 시킬겁니다
+       -->
+      <h2>메뉴</h2>
+      <div class='side-nav-header'>
+        <a href='#' class='btn btn-primary'>작가신청</a>
+      </div>
+      <div class='side-nav-contents'>
+        <div class='menus'>
+          <a href='#'>페북으로 시작하기</a>
+          <a href='#'>트위터로 시작하기</a>
+          <a href='#'>카카오로 시작하기</a>
+        </div>
+        <div class='etc'>
+          <!--
+            - id
+            - identifier (식별자)
+            - 중복해선 안돼
+          -->
+          <input type='checkbox' name='login-status' id='login'>
+          <label for='login'>로그인 상태 유지</label>
+          <a href='#'>계정을 잊어버리셨나요?</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!--- -->

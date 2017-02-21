@@ -1,0 +1,25 @@
+.header {}
+
+/*
+ * CSS Selector
+ */
+
+/*
+ * CSS Variables
+ * IE를 제외한 모든 브라우저에서 지원
+ */
+
+/*
+ * CSS Calc
+ * IE10까지 지원
+ */
+
+/*
+ * CSS Flexbox
+ * IE10까지 부분지원
+ */
+
+/*
+ * CSS Position
+ * 모든 브라우저에서 지원 (Sticky 제외)
+*/
