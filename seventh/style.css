@@ -3,7 +3,9 @@ body {
 }
 .header {
   background:royalblue;
-  padding:15px;
+}
+.header-wrap {
+  padding:15px 15px 0;
 }
 .header .logo-area {
   display:flex;
@@ -37,7 +39,7 @@ body {
 */
 .header button {
   margin:0;
-  padding:10px;
+  padding:0 10px;
   border:0;
   background:none;
   /* iOS */
@@ -46,8 +48,48 @@ body {
   color: inherit;
 }
 .header .input-area {}
-.header .nav-area {}
-
+.header .input-area .inp-search {
+  display:block;
+  width:100%;
+  padding:8px 15px 5px;
+  margin:15px 0;
+  /* fonts */
+  font-size:inherit;
+  line-height:inherit;
+  font-family:inherit;
+  box-sizing:border-box;
+  /* iOS */
+  -webkit-appearance:none;
+  border:1px solid #ddd;
+  border-radius:0;
+}
+.header .nav-area {
+  display:flex;
+  background:white;
+  border-bottom:1px solid #ddd;
+}
+.header .nav-area ul {
+  flex:1;
+  display:flex;
+  overflow:hidden;
+}
+.header .nav-area a {
+  min-width:55px;
+  display:block;
+  padding:8px 10px 6px;
+  color:#000;
+  text-decoration:none;
+  text-align:center;
+}
+.header .nav-area .btn-nav {
+  border-left:1px solid #ddd
+}
+.header .nav-area ul,
+.header .nav-area li {
+  padding:0;
+  margin:0;
+  list-style:none;
+}
 
 
 

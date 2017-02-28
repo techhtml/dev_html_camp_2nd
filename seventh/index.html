@@ -2,20 +2,22 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>네이버</title>
   <link href='style.css' rel='stylesheet'>
 </head>
 <body>
   <header class='header'>
-    <div class='logo-area'>
-      <h1>NAVER</h1>
-      <button type='button' class='btn-hamburger'><i class="material-icons">menu</i></button>
-      <button type='button' class='btn-setHome'><i class="material-icons">home</i></button>
-    </div>
-    <div class='input-area'>
-      <input class='inp-search'>
+    <div class='header-wrap'>
+      <div class='logo-area'>
+        <h1>NAVER</h1>
+        <button type='button' class='btn-hamburger'><i class="material-icons">menu</i></button>
+        <button type='button' class='btn-setHome'><i class="material-icons">home</i></button>
+      </div>
+      <div class='input-area'>
+        <input class='inp-search'>
+      </div>
     </div>
     <nav class='nav-area'>
       <ul>
@@ -27,7 +29,7 @@
         <li><a href='#'>쇼핑</a></li>
         <li><a href='#'>동영상</a></li>
       </ul>
-      <button type='button'>네비게이션 펼치기</button>
+      <button type='button' class='btn-nav'><i class="material-icons">keyboard_arrow_down</i></button>
     </nav>
   </header>
   <main>
