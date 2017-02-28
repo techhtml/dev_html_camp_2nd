@@ -1,0 +1,60 @@
+body {
+  margin:0;
+}
+.header {
+  background:royalblue;
+  padding:15px;
+}
+.header .logo-area {
+  display:flex;
+  align-items:center;
+  color:white;
+}
+.header .logo-area h1 {
+  flex:1;
+  margin:0;
+  font-size:1.3em;
+  text-align:center;
+}
+.header .logo-area .btn-hamburger {
+  order:-1;
+}
+/*
+ * :before (CSS 2.1때 문법)
+ * IE8까지 지원
+ * ::before (CSS 3 문법)
+ * IE9까지 지원
+ */
+ /*
+.header button::before {
+  content:'';
+  display:block;
+  width:22px;
+  height:16px;
+  background:url('sp_main.png') -480px -47px no-repeat;
+  background-size:519px 516px;
+}
+*/
+.header button {
+  margin:0;
+  padding:10px;
+  border:0;
+  background:none;
+  /* iOS */
+  -webkit-apperance:none;
+  /* inherit */
+  color: inherit;
+}
+.header .input-area {}
+.header .nav-area {}
+
+
+
+
+
+
+
+
+
+
+/**/
