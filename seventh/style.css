@@ -1,5 +1,6 @@
 body {
   margin:0;
+  font-size:14px;
 }
 .header {
   background:royalblue;
@@ -91,7 +92,85 @@ body {
   list-style:none;
 }
 
+/* container */
+body {
+  background:#eee;
+}
+.container {
+  position:relative;
+  margin:5px 0;
+  padding:10px 0 0;
+  background:#fff;
+}
+.container h2 {
+  margin:0;
+  padding:0 15px;
+  font-size:1em;
+}
+.container h2 a {
+  display:block;
+  color:inherit;
+  text-decoration:none;
+}
 
+.lst-broadcast,
+.lst-broadcast li {
+  padding:0;
+  margin:0;
+  list-style:none;
+}
+.lst-broadcast {
+  padding:0 20px;
+  overflow:hidden;
+}
+.lst-broadcast li {
+  width:50%;
+  padding-top:5px;
+  float:left;
+  box-sizing:border-box;
+}
+/* 1번째 */
+.lst-broadcast li:first-of-type {}
+/* 마지막 */
+.lst-broadcast li:last-of-type {}
+/* 하나만 있는 경우 */
+.lst-broadcast li:only-of-type {}
+/* n번째 */
+.lst-broadcast li:nth-of-type(even) {
+  padding-left:5px;
+}
+.lst-broadcast li:nth-of-type(odd) {
+  padding-right:5px;
+}
+.lst-broadcast li a {
+  color:#000;
+  text-decoration:none;
+}
+.lst-broadcast li img {
+  width:100%;
+  vertical-align:top;
+}
+.lst-broadcast li a .program-name {
+  color:#2ac1bc;
+}
+.lst-broadcast li p {
+  margin:0;
+}
+.btn-more {
+  position:relative;
+  display:block;
+  width:100%;
+  background:#fff;
+  border:0;
+  border-top:1px solid #ddd;
+  margin-top:8px;
+  padding:7px 0 5px;
+  font-size:inherit;
+}
+.blind {
+  position:absolute;
+  left:-9999px;
+}
 
 
 
