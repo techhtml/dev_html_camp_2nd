@@ -14,7 +14,7 @@
   <!-- status bar -->
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <!-- 안드로이드 => app manifest -->
-  <meta name="viewport" content="initial-scale=1, width=device-width">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, user-scalable=no">
   <!-- 
     (1) 하드웨어
     - 아이폰 시리즈 (iOS는 최신버전)
@@ -47,9 +47,50 @@
     - vibration API (진동)
     - Camera API (사진)
   -->
+  <style>
+    .input {
+      display: block;
+      background: none;
+      width: 100%;
+      padding: 5px 10px;
+      margin: 5px 0;
+      box-sizing: border-box;
+      border-radius: 0;
+      border: 1px solid #555;
+      font: inherit;
+      -webkit-appearance: none;
+    }
+  </style>
+  <link rel='stylesheet' href='style.css'>
 </head>
 <body>
-  <input>
+  <form action='.' method='post'>
+    <!-- input type -->
+    <label for='name'>ID:</label>
+    <input id='name' type='text' class="input" placeholder="admin@naver.com" required>
+    <!-- 만약 type이 text인 경우, 생략 가능 -->
+    <label for='phone'>phone number:</label>
+    <input id='phone' type='tel' class="input" minlength="10" maxlength="14">
+    <input type='number' class="input" min=1 max=10>
+    <!-- 전화번호 & 숫자 -->
+    <input type='email' class="input">
+    <input type='url' class="input">
+    <!-- 특수한 타입 -->
+    <input type='date'>
+    <input type='time'>
+    <input type='datetime-local'>
+    <input type='month'>
+    <!-- 시간 -->
+    <input type='password'>
+    <!-- 비밀번호 -->
+    <div>
+    <input type='radio' name='sex' id='male'> 
+    <label for='male'>남자</label>
+    <input type='radio' name='sex' id='female'> 
+    <label for='female'>여자</label>
+    </div>
+    <input type='submit'>
+  </form>
   <!-- HTML Form -->
   <!-- Media Queries -->
 </body>

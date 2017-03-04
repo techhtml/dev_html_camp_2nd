@@ -1,0 +1,80 @@
+/*
+ * media queries
+ */
+
+ /*
+  * RWD (Responsive Web Design)
+  * MQ
+  */
+
+/*
+ * RWD (Responsive Web Design)
+ * 기존의 웹:
+   * PC면 PC / Mobile이면 Mobile
+ * PC로 보던, 모바일로 보던 그 기기에 최적화된 UI를 제공하자
+ * 해상도대응 (Media Queries)
+ * 이미지대응 (이미지 변경)
+ * 그리드대응 (레이아웃 변경)
+ */
+
+ /*
+  * MQ (미디어 쿼리)
+  * 웹사이트를 접속하는 미디어에 따라 별도의 CSS
+  * 사용자가 접근하는 기기의 타입
+  * screen (화면)
+  * print (인쇄시)
+  * projection (프로젝터)
+  * tv (티브이)
+  * 사용자가 접근한 기기의 스타일
+  * 만약 가로 사이즈가 720px 이상인 경우
+  * 만약 기기의 해상도가 1280 x 720인 경우
+  * 만약 기기가 흑백인 경우
+  * @media <타입> and (조건) {
+  *
+  * }
+  */
+  
+.wrap {
+}
+.col {
+  float: left;
+  width: 100%;
+  background: royalblue;
+  color: white;
+  padding: 25px;
+  box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+}
+.col-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.col-header h2 {
+}
+.col-header .button-area {
+}
+
+/* 브라우저의 가로사이즈가 720px을 넘는경우, 폰트사이즈를 14px */
+@media screen and (min-width:600px) {
+  body {
+    font-size: 14px;
+  }
+  .col {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width:1000px) {
+  .col {
+    width: 33.333333%;
+  }
+}
+
+
+
+
+
+ /**/
