@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Hello world</title>
+  <style>
+  /*
+   * float layout
+   * 깨지기 쉽다
+   * 적층형(쌓이는) UI를 구현하기 쉬움
+   */
+  .row {
+    max-width: 1080px;
+    margin: auto;
+  }
+  /*
+   * clearfix
+   */
+  .row::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .row .column {
+    float: left;
+    width: 100%;
+    padding: 0 2.5%;
+    box-sizing: border-box;
+  }
+  @media (min-width:720px) {
+    .row .column {
+      width: 50%;
+    }
+  }
+  @media (min-width:1280px) {
+    .row .column {
+      width: 25%;
+    }   
+  }
+  /*
+   * 레이아웃만을 위한 무언가
+   * flex, flex-inline
+   * flexible box
+   * display model
+   * 깨지지 않는다
+   */
+   .row-flex {
+    display: flex;
+    /*
+     * flex 방향 (main-axis 변경)
+     * row (행)
+     * row-reverse (행 - 역순)
+     * column (열, 수직)
+     * column-reverse (열, 역순)
+     */
+    flex-direction: row;
+    /*
+     * main axis 정렬
+     * flex-start
+     * flex-end
+     * center
+     * space-between
+     * space-around
+     */
+    justify-content: flex-start;
+    /*
+     * cross axis 정렬 
+     * flex-start
+     * flex-end
+     * center
+     * stretch
+     * baseline
+     */
+    align-items: center;
+    /*
+     * 콘텐츠가 넘치면 아래로 내려가게
+     * nowrap (안내려가게)
+     * wrap (내려가게)
+     * wrap-reverse (내려가기는 하는데 반대로)
+     */
+    flex-wrap: nowrap;
+   }
+   .row-flex .column {
+    background: orange;
+   }
+  /*
+   * position
+   * 특정한 요소를 특정한 위치에 지정시키고 싶어서
+   * 어떤 요소던 position을 가지고 있음
+   * static (정적, 움직이지 않음)
+   * 어떤 요소를 움직이게 하고싶다 (=포지션)
+   * relative
+   * absolute
+   * fixed
+   */
+  .box {
+    position: relative;
+    width: 100px;
+    background: crimson;
+    color: white;
+    text-align: center;
+    padding: 30px 0 28px;
+  }
+  .pos {
+    /* relative */
+    /* Flow에 존재하고, 자기 자신을 기준으로 x축이던 y축을 움직임 */
+    /* absolute */
+    /* Positioned Flow */
+    /* position 속성이 존재하는 조상요소 */
+    position: absolute;
+    left: 20px;
+    top: 40px;
+    /* fixed */
+    /* 어디에있건 상관없이 브라우저 기준 */
+    background: blue;
+  }
+  .dimension {
+    top: 100px;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: orange;
+    z-index: 100000;
+  }
+  </style>
+</head>
+<body>
+  <!-- Normal Flow -->
+  <!-- block model, inline model, inline-block -->
+  <!-- block 요소 -->
+  <!-- width를 100%로 가지려고 함 -->
+  <!-- box-model을 정석대로 적용 받음 -->
+  <!-- inline 요소 -->
+  <!-- line-height를 기준으로 높이 계산 -->
+  <!-- padding-top, padding-bottom이 먹혀보이지만 실제론 그렇지 않음 -->
+  <div class='row-flex'>
+    <div class='column'>col-1 is very simple code because is simple very simple code because is is simple very simple code because is</div>
+    <div class='column'>col-2</div>
+    <div class='column'>col-3</div>
+  </div>
+  <!-- Position -->
+  <!-- 웹은 3D다 -->
+  <!-- X축, Y축, Z축 --> 
+  <div class='dimension'>
+    <div class='box pos'>Position</div>
+  </div>
+  <div class='box '>Position</div>
+  <div class='box '>Position</div>
+  <div class='box '>Position</div> 
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- -->
