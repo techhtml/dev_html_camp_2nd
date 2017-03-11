@@ -1,0 +1,150 @@
+/* common */
+body {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-weight: 300;
+  margin-top: 150px;
+  font-family: 'roboto', sans-serif;
+}
+ul, ol, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/*
+ * blue #2196F3
+ * deepblue 1565C0
+ * gray 9E9E9E
+ */
+.txt {
+  color: #9E9E9E;
+}
+.btn {
+  display: inline-block;
+  padding: 0.6em 1em;
+  color: white;
+  background: #1565C0;
+  font-size: 0.9rem;
+}
+.bul {}
+.ico {}
+.tit {
+  margin: 1em 0;
+  font-size: 3rem;
+  font-weight: 300;
+}
+.tit-primary {
+  color: #1565C0;
+}
+.tit-small {}
+a {
+  color: #2196F3;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* header component */
+header {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  background: white;
+}
+.header-wrap {
+  /* ms용 대응 display: -ms-flexbox; */
+  display: flex;
+  /* ms 대응 flex-item-align: center; */
+  align-items: center;
+  justify-content: space-between;
+  background: #eee;
+  padding: 0.5em 1em;
+}
+.header-wrap .logo-area {
+  display: flex;
+  align-items: center;
+}
+.header-wrap .logo-area h2 {
+  padding-left: 15px;
+}
+.header-wrap h1,
+.header-wrap h2 {margin:0}
+
+.header-nav {}
+.header-nav ul {
+  padding: 0.5em 0;
+  border-bottom: 1px solid #eee;
+}
+.header-nav ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.header-nav li {
+  float: left;
+  font-size: 0.9rem;
+  padding: 0.25em 0.5em;
+}
+.header-nav a {
+  color: #9E9E9E;
+}
+.header-nav a:hover {
+  color: #2196F3;
+}
+
+main {}
+.section-info {
+  max-width: 960px;
+  margin: auto;
+}
+.section-carousel {}
+.title-area {
+  text-align: center;
+}
+.content-area {
+  padding: 1em;
+}
+.content-area::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.info-area {
+  float: left;
+}
+.media-area {
+  float: left;
+  width: 100%;
+}
+.media-area iframe {
+  width: 100%;
+  height: 360px;
+  /*
+   * vw
+   * viewport width
+   * 화면의 가로사이즈
+   */
+}
+
+@media (min-width:720px) {
+  .info-area {
+    width: 50%;
+    padding-right: 2em;
+    box-sizing: border-box;
+  }
+  .media-area {
+    width: 50%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
