@@ -1,0 +1,119 @@
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  color: #2ac1bc;
+}
+button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+}
+
+.wrap {
+  position: relative;
+  min-height: 840px;
+  background: white;
+  z-index: 10000;
+  transition: 0.7s all ease;
+}
+
+.common-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 100;
+  background: rgba(255,255,255,0.9);
+}
+.common-header a {
+  display: block;
+  padding: 15px;
+}
+.common-header button {
+  padding: 15px;
+}
+
+.side-navigation {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 80%;
+  height: 100%;
+  padding-bottom: 41px;
+  background: #111;
+  box-sizing: border-box;
+  color: white;
+  /* transform */
+  /* 형태를 변화시킴 */
+  z-index: 100;
+}
+.side-navigation .tool-area {
+  text-align: right;
+}
+.side-navigation .tool-area a {
+  display: inline-block;
+  padding: 10px;
+}
+.side-navigation .nav-area {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 25px;
+  bottom: 41px;
+  font-size: 20px;
+  font-weight: bold;
+  overflow-y: auto;
+}
+.side-navigation .nav-area ul {
+  margin: 30px 0;
+}
+.side-navigation .nav-area a {
+  display: block;
+  padding: 6px 20px 4px;
+}
+.side-navigation .member-area {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  font-size: 11px;
+  border-top: 1px solid #ebebeb;
+}
+.side-navigation .member-area a {
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+  background: #111;
+}
+.side-navigation .member-area a + a {
+  border-left: 1px solid #ebebeb;
+}
+.wrap-dimd {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0;
+  z-index: 200;
+  transform: translate(-100%, 0);
+  transition: 0.3s opacity ease;
+}
+
+.side-navigation-on .wrap {
+  transform: translate(-80%, 0);
+}
+.side-navigation-on .wrap-dimd {
+  opacity: 0.7;
+  transform: translate(0, 0);
+}
+
+

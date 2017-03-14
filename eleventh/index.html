@@ -36,18 +36,56 @@
   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-  <header class="common-header">
-    <div class='logo-area'>
-      <h1><a href='/'>29cm</a></h1>
-    </div>
-    <div class='btn-area'>
-      <button type='button'>메뉴</button>
-    </div>
-  </header>
-  <!-- main 요소가 Android 4.2.x에서 동작을 X -->
-  <div class="main"></div>
+  <div class="wrap">
+    <header class="common-header">
+      <div class='logo-area'>
+        <h1><a href='/'>29cm</a></h1>
+      </div>
+      <div class='btn-area'>
+        <button type='button'>메뉴</button>
+      </div>
+    </header>
+    <!-- main 요소가 Android 4.2.x에서 동작을 X -->
+    <div class="main"></div>
+    <footer class="common-footer">
+      <div class="sitemap">
+        <ul>
+        <li><a href="#">ABOUT 29CM</a></li>
+        <li><a href="#">개인정보취급방침</a></li>
+        <li><a href="#">이용약관</a></li>
+        </ul>
+      </div>
+      <div class="campany-info">
+      <dl>
+      <dt>상호명</dt>
+      <dd>(주)에이플러스비</dd>
+      <dt>사업장소재지</dt>
+      <dd>서울특별시 마포구 양화로10길 45 (서교동)</dd>
+      <dt>팩스</dt>
+      <dd>070-8622-7737</dd>
+      <dt>사업자등록번호</dt>
+      <dd>101-86-64617</dd>
+      <dt>통신판매업신고</dt>
+      <dd>2015-서울마포-1415 사업자정보확인</dd>
+      <dt>고객센터</dt>
+      <dd><a href="tel:1644-0560">1644-0560</a><br>
+      평일 10:00 ~ 17:00 / Off-time 12:00 ~ 14:00 (토/일/공휴일 휴무)</dd>
+      <dt>이메일</dt>
+      <dd><a href="mailto:customer@29cm.co.kr">customer@29cm.co.kr</a></dd>
+      <dt>대표이사</dt>
+      <dd>이창우</dd>
+      <dt>개인정보책임자</dt> 
+      <dd>주영상</dd>
+      <dt>호스팅서비스</dt>
+      <dd>(주)에이플러스비</dd>
+      </dl>
+      </div>
+    </footer>
+    <div class='wrap-dimd'></div>
+  </div>
+
   <!-- toggle UI -->
-  <!-- is-active, side-navigation-on -->
+  <!-- is-active,  -->
   <div class="side-navigation">
     <div class="tool-area">
       <a href='#'>검색</a>
@@ -60,48 +98,43 @@
       <li><a href='#'>SPECIAL ORDER</a></li>
       <li><a href='#'>PT</a></li>
       </ul>
+      <ul>
+      <li><a href='#'>NEW / BEST</a></li>
+      <li><a href='#'>EVENT</a></li>
+      <li><a href='#'>BRAND</a></li>
+      </ul>
+      <ul>
+      <li><a href='#'>WOMEN</a></li>
+      <li><a href='#'>MEN</a></li>
+      <li><a href='#'>UNISEX</a></li>
+      <li><a href='#'>HOME</a></li>
+      <li><a href='#'>FOOD</a></li>
+      <li><a href='#'>LIFE</a></li>
+      <li><a href='#'>CATALOG</a></li>
+      </ul>
+      <ul>
+      <li><a href='#'>MYPAGE</a></li>
+      <li><a href='#'>HELP</a></li>
+      </ul>
     </nav>
     <div class="member-area">
       <a href='#'>LOGIN</a>
       <a href='#'>SIGN UP</a>
     </div>
   </div>
-  <footer class="common-footer">
-    <div class="sitemap">
-      <ul>
-      <li><a href="#">ABOUT 29CM</a></li>
-      <li><a href="#">개인정보취급방침</a></li>
-      <li><a href="#">이용약관</a></li>
-      </ul>
-    </div>
-    <div class="campany-info">
-    <dl>
-    <dt>상호명</dt>
-    <dd>(주)에이플러스비</dd>
-    <dt>사업장소재지</dt>
-    <dd>서울특별시 마포구 양화로10길 45 (서교동)</dd>
-    <dt>팩스</dt>
-    <dd>070-8622-7737</dd>
-    <dt>사업자등록번호</dt>
-    <dd>101-86-64617</dd>
-    <dt>통신판매업신고</dt>
-    <dd>2015-서울마포-1415 사업자정보확인</dd>
-    <dt>고객센터</dt>
-    <dd><a href="tel:1644-0560">1644-0560</a><br>
-    평일 10:00 ~ 17:00 / Off-time 12:00 ~ 14:00 (토/일/공휴일 휴무)</dd>
-    <dt>이메일</dt>
-    <dd><a href="mailto:customer@29cm.co.kr">customer@29cm.co.kr</a></dd>
-    <dt>대표이사</dt>
-    <dd>이창우</dd>
-    <dt>개인정보책임자</dt> 
-    <dd>주영상</dd>
-    <dt>호스팅서비스</dt>
-    <dd>(주)에이플러스비</dd>
-    </dl>
-    </div>
-  </footer>
-
   <!-- JavaScript -->
+  <script>
+    var btn = document.querySelector('.btn-area button'),
+        dimd = document.querySelector('.wrap-dimd');
+
+    btn.addEventListener('click', function() {
+      document.body.className = "side-navigation-on";
+    }, false)
+
+    dimd.addEventListener('click', function() {
+      document.body.className = "";
+    }, false)    
+  </script>
 </body>
 </html>
 
