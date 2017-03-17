@@ -2,9 +2,6 @@ a {
   color: inherit;
   text-decoration: none;
 }
-a:hover {
-  color: #2ac1bc;
-}
 button {
   padding: 0;
   margin: 0;
@@ -15,10 +12,25 @@ button {
 
 .wrap {
   position: relative;
-  min-height: 840px;
+  min-height:100vh;
   background: white;
   z-index: 10000;
   transition: 0.7s all ease;
+}
+
+.image-bind {
+  position:relative;
+  padding-top:60%;
+  background:#eee;
+}
+.image-bind-vertical {
+  padding-top:150%;
+}
+.image-bind img {
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
 }
 
 .common-header {
@@ -38,6 +50,131 @@ button {
 .common-header button {
   padding: 15px;
 }
+.banner {
+  position:relative;
+  padding-top:52.5%;
+  background:#eee;
+}
+.banner img {
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+}
+.carousel {
+  position:relative;
+  padding-top:100%;
+  background:#eee;
+}
+.carousel-mask {
+  position:absolute;
+  left:0;
+  top:0;
+}
+.carousel-mask ul {
+  display:flex;
+}
+.carousel-mask li {
+  min-width:100%
+}
+.carousel-mask img {
+  width:100%;
+  vertical-align:top;
+}
+.carousel-nav {
+  position:absolute;
+  left:50%;
+  bottom:15px;
+  display:flex;
+  justify-content:center;
+  transform:translate(-50%, 0);
+}
+.carousel-nav li {
+  width:10px;
+  height:10px;
+  margin-right:5px;
+  border:1px solid #000;
+}
+.campaign-list {}
+.campaign-list ul {
+  display:flex;
+  flex-wrap:wrap;
+}
+.campaign-list li {
+  width:50%;
+}
+.campaign-list a {
+  display:block;
+  width:100%;
+  padding:5%;
+  box-sizing:border-box;
+}
+.campaign-list dl {
+  padding-top:1em;
+}
+.campaign-list dt {
+  font-size:.75em;
+}
+.campaign-list dd {
+  font-size:.625em;
+  margin-top:0.5em;
+  color:#aaa;
+}
+.product-info {}
+.product-info .info {
+  padding:0 15px;
+}
+.product-info h2 {
+  font-size:1.5em;
+  font-weight:bold;
+  margin:0.7em 0;
+}
+.product-info p {
+  margin:1em 0;
+  color:#aaa;
+  font-size:.815em;
+  line-height:1.5;
+}
+.product-list {}
+.product-list li {
+  display:flex;
+}
+.product-list li a {
+  flex:1;
+  display:flex;
+  align-items:center;
+  padding:15px;
+  overflow:hidden;
+}
+.product-list li img {
+  width:50px;
+}
+.product-list li dl {
+  padding-left:10px;
+  flex:1;
+  font-size:0.815em;
+}
+.product-list li dt {
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+.product-list li dd {
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+.product-list li dd strong {
+  font-weight:bold;
+  color:orange;
+  margin-right:5px;
+}
+.product-list li .btn-like {
+  width:50px;
+  height:50px;
+  padding:15px;
+}
+
 
 .side-navigation {
   position: fixed;
