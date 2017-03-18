@@ -1,0 +1,24 @@
+{
+  "name": "myfolder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://techhtml:tkfkdgody1!@github.com/techhtml/test-repository.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/techhtml/test-repository/issues"
+  },
+  "homepage": "https://github.com/techhtml/test-repository#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^3.1.0"
+  }
+}
