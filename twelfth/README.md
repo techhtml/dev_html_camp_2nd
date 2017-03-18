@@ -6,12 +6,11 @@
 
 ## 목차
 1. git을 사용한 버전관리
-2. 빌드환경 (gulp)
+2. 빌드 환경 (gulp)
 3. sass (scss), less, postCSS (권장)
-4. 테스트 서버 구축
 
 ## git을 사용한 버전관리
-[git](https://git-scm.com/) 은 버전관리 시스템의 일종으로 현재 전세계에서 가장 활발히 사용한다. 버전관리 시스템은 실제 시스템을 작업해나가는 과정에서, 작업 이력을 남기고 어떤 사람이 어떤 목적으로 작업했는 지 파악하기 위해 사용하고, 코드에 에러가 있어 장애가 발생했을 때 이전 코드로 되돌아가기 위한 (이를 롤백이라 부른다) 목적으로도 사용한다
+[git](https://git-scm.com/) 은 버전관리 시스템의 일종으로 현재 전세계에서 가장 활발히 사용한다. 버전관리 시스템은 실제 시스템을 작업해나가는 과정에서, 작업 이력을 남기고 어떤 사람이 어떤 목적으로 작업했는 지 파악하기 위해 사용하고, 코드에 에러가 있어 장애가 발생했을 때 이전 코드로 되돌아가기 위한 (이를 롤백이라 부른다) 목적으로도 사용한다.
 
 Windows 유저라면 홈페이지에 들어가서 git을 설치하고, 맥 유저는 *xcode* 가 설치되어 있다면 자동으로 git이 설치되어있을 거다. GUI 도구로는 [SourceTree](https://www.sourcetreeapp.com/) 란 게 존재한다. (무료다)
 
@@ -104,11 +103,142 @@ $ open https://github.com/techhtml/test.git
 
 하지만 이번 과정은 git을 학습하는 게 목표가 아니기 때문에 여기서 마치도록 한다.
 
-## 빌드환경
-(작성 중)
+## 빌드 환경
+빌드(Build)는 최종 버전(배포용)의 코드를 만들기 위한 일련의 작업. UI개발에서 빌드가 의미하는 바는 코드를 최적화하고, SCSS나 LESS같은 프리 프로세서를 이용한 개발 코드를 CSS로 변경해주는 등의 작업을 해준다.
+
+*gulp*는 빌드 시스템의 일종으로 CSS를 압축하거나, SCSS를 CSS로 변환해주거나, 이미지를 압축하는 등 다양한 일을 수행하기 위한 빌드 시스템.
+
+### 준비물
+[node.js](https://nodejs.org/en/) * 설치
+
+```
+$ node --version
+v7.0.0
+```
+
+gulpjs 설치
+```
+$ sudo npm install gulp-cli --global
+/usr/local/lib
+└── gulp-cli@1.2.2 
+
+$ gulp --version
+[10:48:28] CLI version 1.2.2
+[10:48:28] Local version 3.9.1
+
+```
+
+### gulp로 SASS 개발환경 구축하기
+
+#### 전제조건
+1. sass로 개발을 한다.
+2. sass로 개발을 한 결과물은 압축된 상태(minify)로 보이게 한다.
+
+#### 구축
+1. `guflpile.js`를 생성
+2. 사용할 도구(gulp-sass, gulp-css-minify)의 가이드를 참고하여 `gulpfile.js`을 채워넣음
+3. `npm init` => *node.js*로 이루어진 어플리케이션임을 정의
+```
+$ npm install gulp gulp-sass --save-dev
+$ gulp sass
+```
+
+*gulp* 외에도 *grunt*나 *webpack*같은 빌드 도구가 존재. UI 개발 단계에서는 gulp가 가장 효율적이기 때문에 이 수업에서는 gulp를 사용합니다.
 
 ## SASS와 LESS, postCSS
-(작성 중)
+### CSS의 문제점
+자식관계를 나타내려면 부모이름을 계속 써줘야함
+```
+.product {}
+.product dt {}
+.product dd {}
+```
 
-## 테스트 서버 구축
-(작성 중)
+중복되는(약간만 바뀌는) 코드가 있더라도 여러번 작성해줘야 함
+```
+.product-white {
+  font-size:15px;
+  line-height:1.2;
+  background:white;
+}
+.product-red {
+  font-size:16px;
+  line-height:1.2;
+  background:red;
+}
+```
+
+변수가 없음. (var를 이용한 변수는 존재하나, 하위호환성이 낮음)
+```
+.product-title {
+  color: #2ac1bc;
+}
+.product-button {
+  background:#2ac1bc;
+}
+```
+
+SASS나 LESS가 하는 일은 반복되는 작업을 줄여주고, 효율적으로 CSS를 관리할 수 있도록 하게 함.
+
+### SASS와 LESS
+SASS(LESS)는 기존의 CSS가 불편했기 때문에 개발자들이 더 효율적으로 CSS를 관리할 수 있게 만든 언어.
+
+자식관계를 나타내려면 부모이름을 계속 써줘야함
+```
+.product {
+  position:relative;
+  font-size:12px;
+  dt {}
+  dd {}
+}
+```
+
+중복되는(약간만 바뀌는) 코드가 있더라도 여러번 작성해줘야 함
+```
+@mixin box($font-size, $bg-color) {
+  font-size:$font-size;
+  line-height:1.2;
+  background:$bg-color;
+}
+.product-white {
+  @include box(14px, white)
+}
+.product-red {
+  @include box(16px, red)
+}
+```
+
+변수가 없음. (var를 이용한 변수는 존재하나, 하위호환성이 낮음)
+```
+$primary: #2ac1bc;
+
+.product-title {
+  color: $primary;
+}
+.product-button {
+  background: $primary;
+}
+```
+
+SASS와 LESS는 차이는 아주 미미하게 있어요. SASS는 Ruby라는 언어를 기반으로 만들어진 언어, LESS는 nodeJS를 기반으로 만들어진 언어.
+
+### postCSS
+CSS를 CSS로 변환. 미래 버전의 CSS를 현재 사용가능하게 해주는 역할
+1. CSS 변수를 사용했다면, 하위호환성을 고려해서 변경
+2. CSS 계산식을 사용했다면, 하위호환성을 고려해서 변경
+3. 자동으로 vendor prefix를 붙여줌
+
+```
+/* before */
+$primary: #2ac1bc;
+
+.box {
+  background:$primary;
+}
+
+/* after */
+.box {
+  background:#2ac1bc;
+}
+```
+
