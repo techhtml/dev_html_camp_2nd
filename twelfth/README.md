@@ -135,7 +135,7 @@ $ gulp --version
 2. sass로 개발을 한 결과물은 압축된 상태(minify)로 보이게 한다.
 
 #### 구축
-1. `guflpile.js`를 생성
+1. `guflfile.js`를 생성
 2. 사용할 도구(gulp-sass, gulp-css-minify)의 가이드를 참고하여 `gulpfile.js`을 채워넣음
 3. `npm init` => *node.js*로 이루어진 어플리케이션임을 정의
 ```
