@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <style>
+      .tab {}
+      .tab-anchors {
+        display:flex;
+      }
+      .tab-anchors a {
+        flex:1;
+        padding:15px 0;
+        text-align:center;
+        background:#555;
+        color:white;
+        text-decoration:none;
+      }
+      .tab-panels {
+        overflow:hidden;
+      }
+      .tab-wrapper {
+        transition:0.3s all ease;
+        display:flex;
+      }
+      .tab-panels .box {
+        min-width:100%;
+        padding:150px 0;
+        background:crimson;
+        font-size:50px;
+        text-align:center;
+        color:white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='tab tab-1'>
+      <div class='tab-anchors'>
+        <a href='#'>1</a>
+        <a href='#'>2</a>
+        <a href='#'>3</a>
+        <a href='#'>4</a>
+        <a href='#'>5</a>
+        <a href='#'>6</a>
+      </div>
+      <!-- mask -->
+      <div class='tab-panels'>
+        <!-- move -->
+        <div class='tab-wrapper'>
+          <div class='box'>1</div>
+          <div class='box'>2</div>
+          <div class='box'>3</div>
+          <div class='box'>4</div>
+          <div class='box'>5</div>
+          <div class='box'>6</div>
+        </div>
+      </div>
+    </div>
+    <div class='tab tab-2'>
+      <div class='tab-anchors'>
+        <a href='#'>1</a>
+        <a href='#'>4</a>
+        <a href='#'>5</a>
+        <a href='#'>6</a>
+      </div>
+      <!-- mask -->
+      <div class='tab-panels'>
+        <!-- move -->
+        <div class='tab-wrapper'>
+          <div class='box'>1</div>
+          <div class='box'>4</div>
+          <div class='box'>5</div>
+          <div class='box'>6</div>
+        </div>
+      </div>
+    </div>
+    <div class='tab tab-3'>
+      <div class='tab-anchors'>
+        <a href='#'>1</a>
+        <a href='#'>2</a>
+        <a href='#'>3</a>
+      </div>
+      <!-- mask -->
+      <div class='tab-panels'>
+        <!-- move -->
+        <div class='tab-wrapper'>
+          <div class='box'>1</div>
+          <div class='box'>2</div>
+          <div class='box'>3</div>
+        </div>
+      </div>
+      <button type='button' class='btn-prev'>이전</button>
+      <button type='button' class='btn-next'>다음</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+    <script>
+      // 스펙
+      // 1이라 숫자가 써져있는 anchor를 클릭하면,
+      // 박스 1이 활성화된다.
+
+      function Tab(targetClass) {
+        var index = 0;
+
+        function tabMove($event) {
+          $(targetClass + ' .tab-wrapper').css({
+            'transform': 'translate(-' + index * 100 + '%, 0)'
+          })
+          $event.preventDefault();
+        }
+
+        $(targetClass + ' .tab-anchors a').each(function(index, obj) {
+          $(obj).data('tab-target', index);
+        });
+
+        // 이게 애니메이션 되었음 조케써요..
+        $(targetClass + ' .tab-anchors a').on('click', function($event) {
+          index = $($event.target).data('tab-target');
+          tabMove($event);
+        });
+
+        $(targetClass + ' .btn-next').on('click', function($event) {
+          var total = $(targetClass + ' .tab-anchors a').length - 1;
+          index += 1;
+          if(index >= total) {
+            index = total;
+          }
+          tabMove($event);
+        })
+
+        $(targetClass + ' .btn-prev').on('click', function($event) {
+          var min = 0;
+          index -= 1;
+          if(index < min) {
+            index = min;
+          }
+          tabMove($event);
+        })
+
+        // carousel
+        // touchmove
+        // start와 end를 비교 (1)
+        // 얼마만큼 이동했는가?에 따라 애니메이션 부여하기 (2)
+        // 현재값과 이전값을 비교
+
+        var nowPos, start, end;
+        $(targetClass + ' .tab-wrapper').on('touchstart', function($event) {
+          var pos = $event.touches[0].clientX;
+          start = pos;
+        })
+        $(targetClass + ' .tab-wrapper').on('touchmove', function($event) {
+          var pos = $event.touches[0].clientX;
+          nowPos = pos;
+          var movePos = Math.abs(nowPos - start);
+          console.log(movePos);
+          // Math.abs()
+        });
+        $(targetClass + ' .tab-wrapper').on('touchend', function($event) {
+          console.log(start, nowPos);
+        })
+
+      }
+
+      // 객체지향 JAVASCRIPT
+      Tab('.tab-1');
+      Tab('.tab-2');
+      Tab('.tab-3');
+    </script>
+  </body>
+</html>
