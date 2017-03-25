@@ -99,6 +99,14 @@
       // 1이라 숫자가 써져있는 anchor를 클릭하면,
       // 박스 1이 활성화된다.
 
+      // Event
+      // 클릭을한다
+
+      var a = document.querySelector('a');
+      a.addEventListener('touchstart', function(event) {
+        console.log(event);
+      });
+
       function Tab(targetClass) {
         var index = 0;
 
