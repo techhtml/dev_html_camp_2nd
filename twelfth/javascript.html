@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='UTF-8'>
+  <title>Hello world</title>
+  <style>
+    .box {
+      height: 500px;
+      background: orange;
+    }
+    .box-1 {
+      background: crimson;
+      
+    }
+    .box-2 {
+      background: royalblue;
+      opacity: 0.4;
+      transition: 0.8s all ease;
+    }
+    .box-2-on {
+      opacity: 1;
+    }
+    .box-3 {
+      background: maroon;
+      transform: rotate(0);
+      transition: 0.8s all ease;
+    }
+    .box-3-on {
+      background: maroon;
+      transform: rotate(360deg);
+    }
+  </style>
+</head>
+<body>
+  <div class='box box-1'>box 1</div>
+  <div class='box box-2'>box 2</div>
+  <div class='box box-3'>box 3</div>
+  <!-- 자바스크립트를 왜 쓸까? -->
+  <!--
+   - 1) 타이밍
+   - 2) 특정한 요소를 제어하기 위해
+   - 3) 데이터를 서버에서 불러오기 위해
+  -->
+  <script>
+    // Javascript
+    // 이벤트를 하기 위해
+    // A라는 무언가가 있으면 B를 할 수 있게
+
+    // 변(하는) 수, variables
+    // 숫자로 시작하거나, 특수기호로 시작하지 않으면 어떤 이름이던 사용가능
+    var human = '조은';
+    var choeun = '조은';
+
+    // 함수, Function
+    // 미리 정해놓은 동작을 동작시키기 위해 사용
+    // 변수명과 동일한 규칙의 명명규칙
+    // 매개변수(parametor)를 전달 가능
+    function changeName(name) {
+      human = name;
+    }
+    console.log(human);
+    // 조은
+
+    changeName('조나단');
+
+    console.log(human);
+    // 조금
+
+    // HTML
+    // CSS
+    // 셀렉터를 이용해 HTML을 찾고,
+    // 그 HTML에 스타일을 부여
+    // JS
+    // 자바스크립트에서 HTML에 접근하여,
+    // 코드를 수정할 수 있게 한 것 (DOM, Document Object Model)
+
+    // 유저가 스크롤 하는 걸 감지
+    // 특정한 스크롤에 도달했을 때, 애니메이션을 줄 요소에 대해서 알아야함.
+
+    // Event
+    // 웹에서 유저가 제어하는 모든 것 = 이벤트
+
+    window.addEventListener('scroll', function() {
+      var scrollTop = window.scrollY,
+      scrollMiddle = scrollTop + (window.innerHeight / 2),
+      box2Top = document.querySelector('.box-2').offsetTop,
+      box3Top = document.querySelector('.box-3').offsetTop;
+
+      if(scrollMiddle > box2Top) {
+        document.querySelector('.box-2').className = 'box box-2 box-2-on';
+      }
+      if(scrollMiddle > box3Top) {
+        document.querySelector('.box-3').className = 'box box-3 box-3-on';
+      }
+    })
+
+  </script>
+</body>
+</html>

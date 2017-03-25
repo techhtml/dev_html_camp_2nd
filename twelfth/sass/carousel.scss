@@ -1,0 +1,34 @@
+.carousel {
+  position:relative;
+  padding-top:100%;
+  background:#eee;
+}
+.carousel-mask {
+  position:absolute;
+  left:0;
+  top:0;
+  ul {
+    display:flex;
+  }
+  li {
+    min-width:100%
+  }
+  img {
+    width:100%;
+    vertical-align:top;
+  }
+}
+.carousel-nav {
+  position:absolute;
+  left:50%;
+  bottom:15px;
+  display:flex;
+  justify-content:center;
+  transform:translate(-50%, 0);
+  li {
+    width:10px;
+    height:10px;
+    margin-right:5px;
+    border:1px solid #000;
+  }
+}
