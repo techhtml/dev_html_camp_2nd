@@ -1,0 +1,106 @@
+@import './common.scss';
+@import './header.scss';
+@import './side-nav.scss';
+@import './carousel.scss';
+
+.wrap {
+  position: relative;
+  min-height:100vh;
+  background: white;
+  z-index: 10000;
+  transition: 0.7s all ease;
+  overflow-x:hidden;
+}
+
+.banner {
+  position:relative;
+  padding-top:52.5%;
+  background:#eee;
+  img {
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+  }
+}
+
+.campaign-list {
+  ul {
+    display:flex;
+    flex-wrap:wrap;
+  }
+  li {
+    width:50%;
+  }
+  a {
+    display:block;
+    width:100%;
+    padding:5%;
+    box-sizing:border-box;
+  }
+  dl {
+    padding-top:1em;
+  }
+  dt {
+    font-size:.75em;
+  }
+  dd {
+    font-size:.625em;
+    margin-top:0.5em;
+    color:#aaa;
+  }
+}
+.product-info {}
+.product-info .info {
+  padding:0 15px;
+}
+.product-info h2 {
+  font-size:1.5em;
+  font-weight:bold;
+  margin:0.7em 0;
+}
+.product-info p {
+  margin:1em 0;
+  color:#aaa;
+  font-size:.815em;
+  line-height:1.5;
+}
+.product-list {}
+.product-list li {
+  display:flex;
+}
+.product-list li a {
+  flex:1;
+  display:flex;
+  align-items:center;
+  padding:15px;
+  overflow:hidden;
+}
+.product-list li img {
+  width:50px;
+}
+.product-list li dl {
+  padding-left:10px;
+  flex:1;
+  font-size:0.815em;
+}
+.product-list li dt {
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+.product-list li dd {
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+.product-list li dd strong {
+  font-weight:bold;
+  color:orange;
+  margin-right:5px;
+}
+.product-list li .btn-like {
+  width:50px;
+  height:50px;
+  padding:15px;
+}
