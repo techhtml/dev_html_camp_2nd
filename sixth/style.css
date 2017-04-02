@@ -1,0 +1,94 @@
+/*
+ * reset css
+ * http://meyerweb.com/eric/tools/css/reset/
+ * normalize
+ * https://necolas.github.io/normalize.css/5.0.0/normalize.css
+ */
+/*
+ * CSS 변수
+ * IE 빼고 다 지원
+ * https://github.com/postcss/postcss
+ */
+:root {
+  --heading-font-size:36px;
+  --subheading-font-size:28px;
+}
+main {}
+main h2 {
+  font-size:var(--heading-font-size);
+  margin:0;
+}
+main .sub-header {
+  font-size:var(--subheading-font-size);
+  margin:0;
+}
+main .notice {
+  text-align:right;
+  margin:0;
+}
+main h3 {
+  position:absolute;
+  left:-100%;
+}
+main .carousel {
+  display: flex;
+}
+main .carousel .panel {
+  min-width:720px;
+}
+ul, li, dl, dt, dd {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+main ul {
+
+}
+main ul li {
+  float: left;
+  width: 50%;
+  height: 260px;
+  text-align:center;
+  background:center center no-repeat #000;
+  background-size:100%;
+  /*
+   * CSS3 Transition
+   * progressive enhancement
+   * IE때문에 나온 개념
+   */
+  transition:0.3s all ease;
+}
+main ul .item-vertical {
+  height:520px;
+}
+main ul .item-three {
+  width:33.33333%;
+}
+main ul .item-horizon {
+  width:100%;
+}
+main ul li:hover {
+  background-size:120%;
+}
+main ul li a {
+  position:relative;
+  display:block;
+  width:100%;
+  height:100%;
+  color:white;
+  text-decoration:none;
+}
+main ul li a dl {
+  /* position */
+  position: absolute;
+  left:50%;
+  top:50%;
+  width:50%;
+  margin:auto;
+  transform:translate(-50%, -50%);
+}
+main ul li a dl dt {
+  font-size:20px;
+}
+main ul li a dl dd {}
+
